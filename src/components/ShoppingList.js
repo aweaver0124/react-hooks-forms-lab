@@ -11,9 +11,13 @@ function ShoppingList({ items }) {
   }
 
   const itemsToDisplay = items.filter((item) => {
-    if (selectedCategory === "All") return true;
+    if (selectedCategory === "All") {
+      return true;
+    } else {
+      return item.category === selectedCategory;
+    }
 
-    return item.category === selectedCategory;
+    
   });
 
   return (
